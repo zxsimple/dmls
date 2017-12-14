@@ -74,17 +74,6 @@
       <artifactId>spark-sql_2.10</artifactId>
     </dependency>
 
-
-    <!--<dependency>-->
-      <!--<groupId>org.apache.spark</groupId>-->
-      <!--<artifactId>spark-hive_2.10</artifactId>-->
-    <!--</dependency>-->
-
-    <!--<dependency>
-      <groupId>ccom.zxsimple.dmls.hive</groupId>
-      <artifactId>jdbc</artifactId>
-    </dependency>-->
-
     <dependency>
       <groupId>org.apache.oozie</groupId>
       <artifactId>oozie-core</artifactId>
@@ -207,25 +196,6 @@
           </execution>
         </executions>
       </plugin>
-
-      <!-- Plugin to create a single jar that includes all dependencies -->
-      <plugin>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <configuration>
-          <descriptorRefs>
-            <descriptorRef>jar-with-dependencies</descriptorRef>
-          </descriptorRefs>
-        </configuration>
-        <executions>
-          <execution>
-            <id>make-assembly</id>
-            <phase>package</phase>
-            <goals>
-              <goal>single</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
     </plugins>
     <pluginManagement>
       <plugins>
@@ -237,37 +207,8 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
         </plugin>
-        <!--<plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <version>2.18.1</version>
-            <configuration>
-                <useFile>false</useFile>
-                <disableXmlReport>true</disableXmlReport>
-                &lt;!&ndash; If you have classpath issue like NoDefClassError,... &ndash;&gt;
-                &lt;!&ndash; useManifestOnlyJar>false</useManifestOnlyJar &ndash;&gt;
-                <includes>
-                    <include>**/*Test.*</include>
-                    <include>**/*Suite.*</include>
-                </includes>
-            </configuration>
-        </plugin>-->
 
       </plugins>
     </pluginManagement>
   </build>
-
-<!--  <distributionManagement>
-    &lt;!&ndash; ����maven������&ndash;&gt;
-    <repository>
-      <id>nexus-taidi</id>
-      <name>Maven Taidi</name>
-      <url>http://192.168.1.161:8081/nexus/content/repositories/releases</url>
-    </repository>
-    <snapshotRepository>
-      <id>nexus-taidi</id>
-      <name>Maven Taidi</name>
-      <url>http://192.168.1.161:8081/nexus/content/repositories/snapshots</url>
-    </snapshotRepository>
-  </distributionManagement>-->
 </project>

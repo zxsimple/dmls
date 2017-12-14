@@ -22,6 +22,11 @@
             <artifactId>dmls-common</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>com.zxsimple.dmls</groupId>
+            <artifactId>dmls-operator</artifactId>
+        </dependency>
+
         <!-- scala -->
         <dependency>
             <groupId>org.scala-lang</groupId>
@@ -235,21 +240,5 @@
         </pluginManagement>
 
     </build>
-
-<!--
-    <distributionManagement>
-        &lt;!&ndash; 传上maven服务器&ndash;&gt;
-        <repository>
-            <id>nexus-taidi</id>
-            <name>Maven Taidi</name>
-            <url>http://192.168.1.161:8081/nexus/content/repositories/releases</url>
-        </repository>
-        <snapshotRepository>
-            <id>nexus-taidi</id>
-            <name>Maven Taidi</name>
-            <url>http://192.168.1.161:8081/nexus/content/repositories/snapshots</url>
-        </snapshotRepository>
-    </distributionManagement>
--->
 
 </project>

@@ -3,10 +3,10 @@ package com.zxsimple.dmls.operator.ml
 import java.util.Properties
 
 import com.zxsimple.dmls.common.metadata.model.NodeVertex
-import com.zxsimple.dmls.common.util.hbaseUtils.HBaseBean.HBaseByDataframeUtils
-import com.zxsimple.dmls.manager.util.TaskUtils
+import com.zxsimple.dmls.util.hbase.HBaseByDataframeUtils
+import com.zxsimple.dmls.util.TaskUtils
 import com.zxsimple.dmls.operator.OperatorTemplate
-import com.zxsimple.dmls.util.MLOperatorUtil
+import com.zxsimple.dmls.util.{MLOperatorUtil, TaskUtils}
 import org.apache.spark.mllib.regression.{LabeledPoint, LinearRegressionModel, LinearRegressionWithSGD}
 import org.apache.spark.sql.DataFrame
 import org.apache.spark.sql.hive.HiveContext

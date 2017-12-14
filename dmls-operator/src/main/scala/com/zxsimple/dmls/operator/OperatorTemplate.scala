@@ -7,7 +7,7 @@ import com.zxsimple.dmls.common.exception.ServiceException
 import com.zxsimple.dmls.common.metadata.dao.impl.NodeVertexDaoImpl
 import com.zxsimple.dmls.common.metadata.enums.Status
 import com.zxsimple.dmls.common.metadata.model.NodeVertex
-import com.zxsimple.dmls.common.util.hbaseUtils.HBaseBean.HBaseByDataframeUtils
+import com.zxsimple.dmls.util.hbase.HBaseByDataframeUtils
 import org.apache.spark.sql.{DataFrame, Row}
 import org.apache.spark.sql.hive.HiveContext
 

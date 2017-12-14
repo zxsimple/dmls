@@ -21,33 +21,6 @@
             <!--<scope>test</scope>-->
         </dependency>
 
-        <!--<dependency>-->
-        <!--<groupId>org.apache.oozie</groupId>-->
-        <!--<artifactId>oozie-core</artifactId>-->
-        <!--<exclusions>-->
-        <!--<exclusion>-->
-        <!--<groupId>org.apache.hadoop</groupId>-->
-        <!--<artifactId>hadoop-core</artifactId>-->
-        <!--</exclusion>-->
-        <!--<exclusion>-->
-        <!--<artifactId>openjpa-persistence</artifactId>-->
-        <!--<groupId>org.apache.openjpa</groupId>-->
-        <!--</exclusion>-->
-        <!--<exclusion>-->
-        <!--<artifactId>slf4j-simpl
-        e</artifactId>-->
-        <!--<groupId>org.slf4j</groupId>-->
-        <!--</exclusion>-->
-        <!--<exclusion>-->
-        <!--<groupId>com.google.guava</groupId>-->
-        <!--<artifactId>guava</artifactId>-->
-        <!--</exclusion>-->
-        <!--<exclusion>-->
-        <!--<artifactId>hive-hcatalog-core</artifactId>-->
-        <!--<groupId>org.apache.hive.hcatalog</groupId>-->
-        <!--</exclusion>-->
-        <!--</exclusions>-->
-        <!--</dependency>-->
 
         <dependency>
             <groupId>org.hibernate</groupId>
@@ -56,24 +29,6 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-c3p0</artifactId>
-        </dependency>
-
-        <!-- scala -->
-        <dependency>
-            <groupId>org.scala-lang</groupId>
-            <artifactId>scala-library</artifactId>
-        </dependency>
-
-        <!-- hbase -->
-        <dependency>
-            <groupId>org.apache.hbase</groupId>
-            <artifactId>hbase-client</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>it.nerdammer.bigdata</groupId>
-            <artifactId>spark-hbase-connector_2.10</artifactId>
-            <version>1.0.3</version>
         </dependency>
 
         <!-- spark -->
@@ -86,11 +41,6 @@
                     <groupId>log4j</groupId>
                 </exclusion>
             </exclusions>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.spark</groupId>
-            <artifactId>spark-streaming_2.10</artifactId>
         </dependency>
 
         <dependency>
@@ -114,33 +64,7 @@
             <artifactId>spark-hive_2.10</artifactId>
         </dependency>
 
-        <!--<dependency>-->
-        <!--<groupId>com.dmls.hive</groupId>-->
-        <!--<artifactId>jdbc</artifactId>-->
-        <!--</dependency>-->
-        <dependency>
-            <groupId>org.apache.hive</groupId>
-            <artifactId>hive-jdbc</artifactId>
-            <version>2.1.0</version>
-            <exclusions>
-                <exclusion>
-                    <artifactId>log4j-slf4j-impl</artifactId>
-                    <groupId>org.apache.logging.log4j</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>log4j-1.2-api</artifactId>
-                    <groupId>org.apache.logging.log4j</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>log4j-web</artifactId>
-                    <groupId>org.apache.logging.log4j</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>mail</artifactId>
-                    <groupId>javax.mail</groupId>
-                </exclusion>
-            </exclusions>
-        </dependency>
+
         <dependency>
             <groupId>javax.mail</groupId>
             <artifactId>javax.mail-api</artifactId>
@@ -161,63 +85,6 @@
             <groupId>com.caucho</groupId>
             <artifactId>hessian</artifactId>
             <version>4.0.38</version>
-        </dependency>
-
-        <dependency>
-            <groupId>dom4j</groupId>
-            <artifactId>dom4j</artifactId>
-        </dependency>
-
-        <!-- hadoop relates -->
-        <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-mapreduce-client-common</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-mapreduce-client-core</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-mapreduce-client-jobclient</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-auth</artifactId>
-            <exclusions>
-                <exclusion>
-                    <artifactId>log4j</artifactId>
-                    <groupId>log4j</groupId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-common</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-hdfs</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-yarn-api</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-yarn-client</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-yarn-common</artifactId>
         </dependency>
 
         <dependency>
@@ -250,11 +117,6 @@
             <artifactId>htrace-core</artifactId>
         </dependency>
 
-        <!--<dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-jaxrs</artifactId>
-        </dependency>-->
-
         <dependency>
             <groupId>org.codehaus.jackson</groupId>
             <artifactId>jackson-core-asl</artifactId>
@@ -264,11 +126,6 @@
             <groupId>org.codehaus.jackson</groupId>
             <artifactId>jackson-mapper-asl</artifactId>
         </dependency>
-
-        <!--<dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-xc</artifactId>
-        </dependency>-->
 
         <dependency>
             <groupId>com.fasterxml.jackson.datatype</groupId>
@@ -295,21 +152,11 @@
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
 
-        <!--<dependency>-->
-        <!--<groupId>net.sourceforge.jchardet</groupId>-->
-        <!--<artifactId>jchardet</artifactId>-->
-        <!--</dependency>-->
-
         <dependency>
             <groupId>org.apache.sqoop</groupId>
             <artifactId>sqoop-client</artifactId>
         </dependency>
 
-        <!--<dependency>-->
-        <!--<groupId>net.sf.json-lib</groupId>-->
-        <!--<artifactId>json-lib</artifactId>-->
-        <!--<classifier>jdk15</classifier>-->
-        <!--</dependency>-->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
@@ -319,16 +166,6 @@
             <groupId>com.hortonworks</groupId>
             <artifactId>shc</artifactId>
         </dependency>
-
-        <!--<dependency>
-            <groupId>ojdbc</groupId>
-            <artifactId>ojdbc</artifactId>
-        </dependency>-->
-
-        <!--<dependency>
-            <groupId>com.dmls</groupId>
-            <artifactId>sshxcute</artifactId>
-        </dependency>-->
 
         <dependency>
             <groupId>org.apache.tez</groupId>
@@ -395,19 +232,5 @@
             </plugins>
         </pluginManagement>
     </build>
-
-    <!--<distributionManagement>
-        &lt;!&ndash; 传上maven服务器&ndash;&gt;
-        <repository>
-            <id>nexus-taidi</id>
-            <name>Maven Taidi</name>
-            <url>http://192.168.1.161:8081/nexus/content/repositories/releases</url>
-        </repository>
-        <snapshotRepository>
-            <id>nexus-taidi</id>
-            <name>Maven Taidi</name>
-            <url>http://192.168.1.161:8081/nexus/content/repositories/snapshots</url>
-        </snapshotRepository>
-    </distributionManagement>-->
 
 </project>

@@ -2,7 +2,7 @@ package com.zxsimple.dmls.util
 
 import com.zxsimple.dmls.common.metadata.dao.impl.ETLTaskDaoImpl
 import com.zxsimple.dmls.common.metadata.model.ETLTask
-import com.zxsimple.dmls.common.util.hbaseUtils.HBaseBean.HBaseByDataframeUtils
+import com.zxsimple.dmls.util.hbase.HBaseByDataframeUtils
 import com.zxsimple.dmls.node.Node
 import org.apache.log4j.Logger
 import org.apache.spark.rdd.RDD

@@ -3,8 +3,8 @@ package com.zxsimple.dmls.operator.ml
 import java.util.Properties
 
 import com.zxsimple.dmls.common.metadata.model.NodeVertex
-import com.zxsimple.dmls.common.util.hbaseUtils.HBaseBean.HBaseByDataframeUtils
-import com.zxsimple.dmls.manager.util.TaskUtils
+import com.zxsimple.dmls.util.hbase.HBaseByDataframeUtils
+import com.zxsimple.dmls.util.TaskUtils
 import com.zxsimple.dmls.operator.OperatorTemplate
 import com.zxsimple.dmls.util.MLOperatorUtil
 import org.apache.spark.mllib.clustering.{KMeans, KMeansModel}

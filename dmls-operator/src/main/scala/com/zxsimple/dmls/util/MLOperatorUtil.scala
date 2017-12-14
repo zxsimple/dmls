@@ -7,7 +7,7 @@ import java.util
 import com.alibaba.fastjson.JSONObject
 import com.zxsimple.dmls.common.metadata.dao.impl._
 import com.zxsimple.dmls.common.metadata.model._
-import com.zxsimple.dmls.common.util.hdfs.HDFSUtil
+import com.zxsimple.dmls.common.util.HDFSUtil
 import org.apache.hadoop.fs.{FileSystem, Path}
 import org.apache.spark.SparkContext
 import org.apache.spark.ml.feature.Bucketizer

@@ -4,11 +4,10 @@ import java.util.Properties
 
 import com.zxsimple.dmls.common.exception.ModelException
 import com.zxsimple.dmls.common.metadata.model.NodeVertex
-import com.zxsimple.dmls.common.util.HiveUDF.CreateHash
-import com.zxsimple.dmls.common.util.hbaseUtils.HBaseBean.HBaseByDataframeUtils
-import com.zxsimple.dmls.manager.util.TaskUtils
+import com.zxsimple.dmls.util.hbase.HBaseByDataframeUtils
+import com.zxsimple.dmls.util.TaskUtils
 import com.zxsimple.dmls.operator.OperatorTemplate
-import com.zxsimple.dmls.util.{MLOperatorUtil, TaskUtils}
+import com.zxsimple.dmls.util.{CreateHash, MLOperatorUtil}
 import org.apache.spark.mllib.fpm.FPGrowth
 import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.DataFrame

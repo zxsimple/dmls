@@ -1,10 +1,10 @@
-package com.zxsimple.dmls.manager.util
+package com.zxsimple.dmls.util
 
 import java.util
 import java.util.regex.Pattern
 
-import com.zxsimple.dmls.common.util.HiveUDF.CreateHash
 import com.zxsimple.dmls.model.DFStats
+import com.zxsimple.dmls.util.CreateHash
 import org.apache.spark.mllib.linalg.{Vector, Vectors}
 import org.apache.spark.mllib.regression.LabeledPoint
 import org.apache.spark.rdd.RDD

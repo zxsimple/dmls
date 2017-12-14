@@ -1,232 +1,224 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.zxsimple.dmls</groupId>
-	<artifactId>dmls</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>dmls</name>
-	<url />
-	<packaging>pom</packaging>
-	<!-- test-->
-	<properties>
-		<dmls.version>0.0.1-SNAPSHOT</dmls.version>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-		<spring.version>4.2.4.RELEASE</spring.version>
-		<spring-data-jpa.version>1.9.2.RELEASE</spring-data-jpa.version>
-		<guava.version>16.0.1</guava.version>
-		<gson.version>2.6.1</gson.version>
-		<slf4j.version>1.7.13</slf4j.version>
-		<log4j.version>1.2.14</log4j.version>
-		<commons-logging.version>1.2</commons-logging.version>
-		<maven-surefire-plugin.version>2.18.1</maven-surefire-plugin.version>
-		<junit.version>4.11</junit.version>
-		<sitemesh.version>2.4.2</sitemesh.version>
-		<freemarker.version>2.3.22</freemarker.version>
-		<hibernate.version>4.3.8.Final</hibernate.version>
-		<hibernate-validator.version>5.0.3.Final</hibernate-validator.version>
-		<jackson.version>2.4.4</jackson.version>
-		<json-lib.version>2.4</json-lib.version>
-		<commons-fileupload.version>1.2.2</commons-fileupload.version>
-		<commons-long.version>2.5</commons-long.version>
-		<servlet.version>3.0.1</servlet.version>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.zxsimple.dmls</groupId>
+    <artifactId>dmls</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>dmls</name>
 
-		<!-- scala -->
-		<scala.version>2.10.2</scala.version>
-		<scala.compat.version>2.10</scala.compat.version>
+    <prerequisites>
+        <maven>3.0.0</maven>
+    </prerequisites>
 
-		<!-- spark -->
-		<spark.version>1.6.0</spark.version>
-
-		<java.version>1.7</java.version>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.source>1.7</maven.compiler.source>
-		<maven.compiler.target>1.7</maven.compiler.target>
-
-		<jdbc.driver.groupId>com.h2database</jdbc.driver.groupId>
-		<jdbc.driver.artifactId>h2</jdbc.driver.artifactId>
-		<jdbc.driver.version>1.4.191</jdbc.driver.version>
-		<tomcat-jdbc.version>7.0.57</tomcat-jdbc.version>
-		
-		<javax.mail-api.version>1.5.5</javax.mail-api.version>
-		<mail.version>1.4.7</mail.version>
-		<mailapi.version>1.4.3</mailapi.version>
-		<dom4j.version>1.6.1</dom4j.version>
-		
-		<!-- hadoop -->
-		<hadoop-mapreduce-client-common.version>2.7.2</hadoop-mapreduce-client-common.version>
-		<hadoop-mapreduce-client-core.version>2.7.2</hadoop-mapreduce-client-core.version>
-		<hadoop-mapreduce-client-jobclient.version>2.7.2</hadoop-mapreduce-client-jobclient.version>
-		<hadoop-auth.version>2.7.2</hadoop-auth.version>
-		<hadoop-common.version>2.7.2</hadoop-common.version>
-		<hadoop-hdfs.version>2.7.2</hadoop-hdfs.version>
-		<hadoop-yarn-api.version>2.7.2</hadoop-yarn-api.version>
-		<hadoop-yarn-client.version>2.7.2</hadoop-yarn-client.version>
-		<hadoop-yarn-common.version>2.7.2</hadoop-yarn-common.version>
-
-		<sqoop-client.version>1.99.6</sqoop-client.version>
-		<sqoop.version>1.4.6</sqoop.version>
-		<commons-cli.version>1.3.1</commons-cli.version>
-		<commons-collections.version>3.2.2</commons-collections.version>
-		<commons-configuration.version>1.10</commons-configuration.version>
-		<commons-lang.version>2.6</commons-lang.version>
-		<htrace-core.version>3.0.4</htrace-core.version>
-		<jackson-core.version>2.7.3</jackson-core.version>
-		<jackson-annotations.version>2.7.3</jackson-annotations.version>
-		<jackson-jaxrs.version>1.9.13</jackson-jaxrs.version>
-		<jackson-core-asl.version>1.9.13</jackson-core-asl.version>
-		<jackson-mapper-asl.version>1.9.13</jackson-mapper-asl.version>
-		<jackson-xc.version>1.9.13</jackson-xc.version>
-		<jersey-client.version>1.19.1</jersey-client.version>
-		<jersey-core.version>1.19.1</jersey-core.version>
-		<protobuf-java.version>2.6.1</protobuf-java.version>
-		
-		<oozie-core.version>4.2.0</oozie-core.version>
-		
-		
-		<mysql-connector-java.version>5.1.18</mysql-connector-java.version>
-		<oracle-connector-java.version>14</oracle-connector-java.version>
-		<sqlserver2000-connector-java.version>1.4</sqlserver2000-connector-java.version>
-		<sqlserver2005-connector-java.version>1.4</sqlserver2005-connector-java.version>
-
-		<!-- Apache commons-->
-		<httpclient.version>4.5.2</httpclient.version>
-
-		<fastjson.version>1.2.8</fastjson.version>
-		<jchardet.version>1.0</jchardet.version>
-
-		<!--the 3rd package-->
-		<dmlp.version>1.2.1</dmlp.version>
-
-		<!--hbase-->
-		<hbase.version>1.2.1</hbase.version>
-		<hive-jdbc.version>2.1.0</hive-jdbc.version>
-
-		<!-- dataFrame操作hbase-->
-		<shc.version>1.0.0-2.0-s_2.11</shc.version>
-
-		<!--sshxcute-->
-		<sshxcute.version>1.0</sshxcute.version>
-
-		<!-- HDP的hive依赖包-->
-		<hivejdbc.version>1.2.0</hivejdbc.version>
-
-		<tez.version>0.8.4</tez.version>
-
-		<!-- 时序算法需要 -->
-		<sparkts.version>0.4.1</sparkts.version>
-
-		<!-- 时序算法需要 -->
-		<ganymed-ssh2.version>build210</ganymed-ssh2.version>
-
-		<!-- jgrapht -->
-		<jgrapht.version>1.0.1</jgrapht.version>
-
-	</properties>
-
-	<prerequisites>
-		<maven>3.0.0</maven>
-	</prerequisites>
-
-	<modules>
-		<module>dmls-common</module>
-		<module>dmls-feature-engineering</module>
-		<module>dmls-machine-learning</module>
-		<module>dmls-manager</module>
-		<module>dmls-rest</module>
-        <module>dmls-ui</module>
+    <modules>
+        <module>dmls-common</module>
         <module>dmls-operator</module>
-		<module>dmls-etl</module>
-	</modules>
+        <module>dmls-etl</module>
+        <module>dmls-feature-engineering</module>
+        <module>dmls-machine-learning</module>
+        <module>dmls-manager</module>
+        <module>dmls-rest</module>
+        <module>dmls-ui</module>
+    </modules>
 
-	<repositories>
+    <packaging>pom</packaging>
 
-		<repository>
-			<id>maven-central</id>
-			<url>http://central.maven.org/maven2/</url>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-			<releases>
-				<enabled>true</enabled>
-				<updatePolicy>always</updatePolicy>
-			</releases>
-		</repository>
+    <properties>
+        <dmls.version>0.0.1-SNAPSHOT</dmls.version>
 
-		<repository>
-			<id>mvnrepository</id>
-			<url>https://repo.maven.apache.org/maven2</url>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-			<releases>
-				<enabled>true</enabled>
-				<updatePolicy>always</updatePolicy>
-			</releases>
-		</repository>
-		<repository>
-			<id>hortonworks-repository</id>
-			<url>http://repo.hortonworks.com/content/groups/public</url>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-			<releases>
-				<enabled>true</enabled>
-				<updatePolicy>always</updatePolicy>
-			</releases>
-		</repository>
+        <spring.version>4.2.4.RELEASE</spring.version>
+        <spring-data-jpa.version>1.9.2.RELEASE</spring-data-jpa.version>
+        <guava.version>16.0.1</guava.version>
+        <gson.version>2.6.1</gson.version>
+        <slf4j.version>1.7.13</slf4j.version>
+        <log4j.version>1.2.14</log4j.version>
+        <commons-logging.version>1.2</commons-logging.version>
+        <maven-surefire-plugin.version>2.18.1</maven-surefire-plugin.version>
+        <junit.version>4.11</junit.version>
+        <sitemesh.version>2.4.2</sitemesh.version>
+        <freemarker.version>2.3.22</freemarker.version>
+        <hibernate.version>4.3.8.Final</hibernate.version>
+        <hibernate-validator.version>5.0.3.Final</hibernate-validator.version>
+        <jackson.version>2.4.4</jackson.version>
+        <json-lib.version>2.4</json-lib.version>
+        <commons-fileupload.version>1.2.2</commons-fileupload.version>
+        <commons-long.version>2.5</commons-long.version>
+        <servlet.version>3.0.1</servlet.version>
 
-		<repository>
-			<id>dl-bintray-repository</id>
-			<url>https://dl.bintray.com/spark-packages/maven/</url>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-			<releases>
-				<enabled>true</enabled>
-				<updatePolicy>always</updatePolicy>
-			</releases>
-		</repository>
+        <!-- scala -->
+        <scala.version>2.10.2</scala.version>
+        <scala.compat.version>2.10</scala.compat.version>
+
+        <!-- spark -->
+        <spark.version>1.6.0</spark.version>
+
+        <java.version>1.7</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
+
+        <jdbc.driver.groupId>com.h2database</jdbc.driver.groupId>
+        <jdbc.driver.artifactId>h2</jdbc.driver.artifactId>
+        <jdbc.driver.version>1.4.191</jdbc.driver.version>
+        <tomcat-jdbc.version>7.0.57</tomcat-jdbc.version>
+
+        <javax.mail-api.version>1.5.5</javax.mail-api.version>
+        <mail.version>1.4.7</mail.version>
+        <mailapi.version>1.4.3</mailapi.version>
+        <dom4j.version>1.6.1</dom4j.version>
+
+        <!-- hadoop -->
+        <hadoop-mapreduce-client-common.version>2.7.2</hadoop-mapreduce-client-common.version>
+        <hadoop-mapreduce-client-core.version>2.7.2</hadoop-mapreduce-client-core.version>
+        <hadoop-mapreduce-client-jobclient.version>2.7.2</hadoop-mapreduce-client-jobclient.version>
+        <hadoop-auth.version>2.7.2</hadoop-auth.version>
+        <hadoop-common.version>2.7.2</hadoop-common.version>
+        <hadoop-hdfs.version>2.7.2</hadoop-hdfs.version>
+        <hadoop-yarn-api.version>2.7.2</hadoop-yarn-api.version>
+        <hadoop-yarn-client.version>2.7.2</hadoop-yarn-client.version>
+        <hadoop-yarn-common.version>2.7.2</hadoop-yarn-common.version>
+
+        <sqoop-client.version>1.99.6</sqoop-client.version>
+        <sqoop.version>1.4.6</sqoop.version>
+        <commons-cli.version>1.3.1</commons-cli.version>
+        <commons-collections.version>3.2.2</commons-collections.version>
+        <commons-configuration.version>1.10</commons-configuration.version>
+        <commons-lang.version>2.6</commons-lang.version>
+        <htrace-core.version>3.0.4</htrace-core.version>
+        <jackson-core.version>2.7.3</jackson-core.version>
+        <jackson-annotations.version>2.7.3</jackson-annotations.version>
+        <jackson-jaxrs.version>1.9.13</jackson-jaxrs.version>
+        <jackson-core-asl.version>1.9.13</jackson-core-asl.version>
+        <jackson-mapper-asl.version>1.9.13</jackson-mapper-asl.version>
+        <jackson-xc.version>1.9.13</jackson-xc.version>
+        <jersey-client.version>1.19.1</jersey-client.version>
+        <jersey-core.version>1.19.1</jersey-core.version>
+        <protobuf-java.version>2.6.1</protobuf-java.version>
+
+        <oozie-core.version>4.2.0</oozie-core.version>
+
+        <mysql-connector-java.version>5.1.18</mysql-connector-java.version>
+        <oracle-connector-java.version>14</oracle-connector-java.version>
+        <sqlserver2000-connector-java.version>1.4</sqlserver2000-connector-java.version>
+        <sqlserver2005-connector-java.version>1.4</sqlserver2005-connector-java.version>
+
+        <!-- Apache commons-->
+        <httpclient.version>4.5.2</httpclient.version>
+
+        <fastjson.version>1.2.8</fastjson.version>
+        <jchardet.version>1.0</jchardet.version>
+
+        <!--the 3rd package-->
+        <dmlp.version>1.2.1</dmlp.version>
+
+        <!--hbase-->
+        <hbase.version>1.2.1</hbase.version>
+        <hive-jdbc.version>2.1.0</hive-jdbc.version>
+
+        <!-- dataFrame操作hbase-->
+        <shc.version>1.0.0-2.0-s_2.11</shc.version>
+
+        <!--sshxcute-->
+        <sshxcute.version>1.0</sshxcute.version>
+
+        <!-- HDP的hive依赖包-->
+        <hivejdbc.version>1.2.0</hivejdbc.version>
+
+        <tez.version>0.8.4</tez.version>
+
+        <!-- 时序算法需要 -->
+        <sparkts.version>0.4.1</sparkts.version>
+
+        <!-- 时序算法需要 -->
+        <ganymed-ssh2.version>build210</ganymed-ssh2.version>
+
+        <!-- jgrapht -->
+        <jgrapht.version>1.0.1</jgrapht.version>
+
+    </properties>
 
 
-		<!--<repository>
-			<id>io.spring.repo.maven.release</id>
-			<url>http://repo.spring.io/release/</url>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>-->
-	</repositories>
+    <repositories>
+        <repository>
+            <id>maven-central</id>
+            <url>http://central.maven.org/maven2/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </releases>
+        </repository>
 
-	<pluginRepositories>
-		<pluginRepository>
-			<id>spring-milestone</id>
-			<url>https://repo.spring.io/libs-release</url>
-		</pluginRepository>
-	</pluginRepositories>
+        <repository>
+            <id>mvnrepository</id>
+            <url>https://repo.maven.apache.org/maven2</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </releases>
+        </repository>
+        <repository>
+            <id>hortonworks-repository</id>
+            <url>http://repo.hortonworks.com/content/groups/public</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </releases>
+        </repository>
 
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
+        <repository>
+            <id>dl-bintray-repository</id>
+            <url>https://dl.bintray.com/spark-packages/maven/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </releases>
+        </repository>
+
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>spring-milestone</id>
+            <url>https://repo.spring.io/libs-release</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
                 <groupId>com.zxsimple.dmls</groupId>
                 <artifactId>dmls-common</artifactId>
                 <version>${dmls.version}</version>
             </dependency>
-			<dependency>
-				<groupId>com.zxsimple.dmls</groupId>
-				<artifactId>dmls-manager</artifactId>
-				<version>${dmls.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>com.zxsimple.dmls</groupId>
-				<artifactId>dmls-operator</artifactId>
-				<version>${dmls.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>com.zxsimple.dmls</groupId>
-				<artifactId>dmls-etl</artifactId>
-				<version>${dmls.version}</version>
-			</dependency>
+            <dependency>
+                <groupId>com.zxsimple.dmls</groupId>
+                <artifactId>dmls-manager</artifactId>
+                <version>${dmls.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zxsimple.dmls</groupId>
+                <artifactId>dmls-operator</artifactId>
+                <version>${dmls.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zxsimple.dmls</groupId>
+                <artifactId>dmls-etl</artifactId>
+                <version>${dmls.version}</version>
+            </dependency>
             <dependency>
                 <groupId>com.zxsimple.dmls</groupId>
                 <artifactId>dmls-machie-learning</artifactId>
@@ -238,756 +230,699 @@
                 <version>${dmls.version}</version>
             </dependency>
 
-			<!-- for jsp -->
-			<dependency>
-				<groupId>javax.servlet</groupId>
-				<artifactId>jstl</artifactId>
-				<version>${jstl.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>taglibs</groupId>
-				<artifactId>standard</artifactId>
-				<version>${jstl.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>javax.servlet</groupId>
-				<artifactId>javax.servlet-api</artifactId>
-				<version>${servlet.version}</version>
-				<scope>provided</scope>
-			</dependency>
+            <!-- for jsp -->
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>jstl</artifactId>
+                <version>${jstl.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>taglibs</groupId>
+                <artifactId>standard</artifactId>
+                <version>${jstl.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>${servlet.version}</version>
+                <scope>provided</scope>
+            </dependency>
 
-			<!-- spring base -->
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-framework-bom</artifactId>
-				<version>${spring.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
+            <!-- spring base -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-framework-bom</artifactId>
+                <version>${spring.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
 
-			<!-- logging -->
-			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>jcl-over-slf4j</artifactId>
-				<version>${slf4j.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-api</artifactId>
-				<version>${slf4j.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-log4j12</artifactId>
-				<version>${slf4j.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>log4j</groupId>
-				<artifactId>log4j</artifactId>
-				<version>${log4j.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>commons-logging</groupId>
-				<artifactId>commons-logging</artifactId>
-				<version>${commons-logging.version}</version>
-			</dependency>
+            <!-- logging -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>jcl-over-slf4j</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-log4j12</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>log4j</groupId>
+                <artifactId>log4j</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-logging</groupId>
+                <artifactId>commons-logging</artifactId>
+                <version>${commons-logging.version}</version>
+            </dependency>
 
-			<!-- spring base -->
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-core</artifactId>
-				<version>${spring.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-beans</artifactId>
-				<version>${spring.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-context</artifactId>
-				<version>${spring.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-context-support</artifactId>
-				<version>${spring.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-expression</artifactId>
-				<version>${spring.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-aop</artifactId>
-				<version>${spring.version}</version>
-			</dependency>
+            <!-- spring base -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-core</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-beans</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context-support</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-expression</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-aop</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
 
-			<!-- spring web -->
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-web</artifactId>
-				<version>${spring.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-webmvc</artifactId>
-				<version>${spring.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-websocket</artifactId>
-				<version>${spring.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.freemarker</groupId>
-				<artifactId>freemarker</artifactId>
-				<version>${freemarker.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>opensymphony</groupId>
-				<artifactId>sitemesh</artifactId>
-				<version>${sitemesh.version}</version>
-				<scope>runtime</scope>
-			</dependency>
+            <!-- spring web -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-web</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-webmvc</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-websocket</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.freemarker</groupId>
+                <artifactId>freemarker</artifactId>
+                <version>${freemarker.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>opensymphony</groupId>
+                <artifactId>sitemesh</artifactId>
+                <version>${sitemesh.version}</version>
+                <scope>runtime</scope>
+            </dependency>
 
-			<!-- spring data -->
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-jdbc</artifactId>
-				<version>${spring.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-tx</artifactId>
-				<version>${spring.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-orm</artifactId>
-				<version>${spring.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework.data</groupId>
-				<artifactId>spring-data-jpa</artifactId>
-				<version>${spring-data-jpa.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.hibernate</groupId>
-				<artifactId>hibernate-entitymanager</artifactId>
-				<version>${hibernate.version}</version>
-			</dependency>
-			
-			<dependency>
-			  	<groupId>org.hibernate</groupId>
-			  	<artifactId>hibernate-core</artifactId>
-			  	<version>${hibernate.version}</version>
-		  	</dependency>
+            <!-- spring data -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-jdbc</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-tx</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-orm</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-jpa</artifactId>
+                <version>${spring-data-jpa.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-entitymanager</artifactId>
+                <version>${hibernate.version}</version>
+            </dependency>
 
-			<dependency>
-				<groupId>org.hibernate</groupId>
-				<artifactId>hibernate-c3p0</artifactId>
-				<version>${hibernate.version}</version>
-			</dependency>
-			<!-- JSR303 BeanValidator -->
-			<dependency>
-				<groupId>org.hibernate</groupId>
-				<artifactId>hibernate-validator</artifactId>
-				<version>${hibernate-validator.version}</version>
-			</dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-core</artifactId>
+                <version>${hibernate.version}</version>
+            </dependency>
 
-			<!-- database -->
-			<dependency>
-				<groupId>org.apache.tomcat</groupId>
-				<artifactId>tomcat-jdbc</artifactId>
-				<version>${tomcat-jdbc.version}</version>
-				<scope>runtime</scope>
-			</dependency>
-			<dependency>
-				<groupId>${jdbc.driver.groupId}</groupId>
-				<artifactId>${jdbc.driver.artifactId}</artifactId>
-				<version>${jdbc.driver.version}</version>
-				<scope>runtime</scope>
-			</dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-c3p0</artifactId>
+                <version>${hibernate.version}</version>
+            </dependency>
+            <!-- JSR303 BeanValidator -->
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>${hibernate-validator.version}</version>
+            </dependency>
 
-			<!-- spring message -->
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-messaging</artifactId>
-				<version>${spring.version}</version>
-			</dependency>
+            <!-- database -->
+            <dependency>
+                <groupId>org.apache.tomcat</groupId>
+                <artifactId>tomcat-jdbc</artifactId>
+                <version>${tomcat-jdbc.version}</version>
+                <scope>runtime</scope>
+            </dependency>
+            <dependency>
+                <groupId>${jdbc.driver.groupId}</groupId>
+                <artifactId>${jdbc.driver.artifactId}</artifactId>
+                <version>${jdbc.driver.version}</version>
+                <scope>runtime</scope>
+            </dependency>
 
-			<!-- spring test -->
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-test</artifactId>
-				<version>${spring.version}</version>
-			</dependency>
+            <!-- spring message -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-messaging</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
 
-			<dependency>
-				<groupId>junit</groupId>
-				<artifactId>junit</artifactId>
-				<version>${junit.version}</version>
-				<!--<scope>test</scope>-->
-			</dependency>
+            <!-- spring test -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-test</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
 
-			<!-- JSON begin -->
-			<dependency>
-				<groupId>com.fasterxml.jackson.core</groupId>
-				<artifactId>jackson-databind</artifactId>
-				<version>${jackson.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>com.fasterxml.jackson.module</groupId>
-				<artifactId>jackson-module-jaxb-annotations</artifactId>
-				<version>${jackson.version}</version>
-			</dependency>
-			
-			<!--json-lib-->    
-			<!--<dependency>    -->
-			    <!--<groupId>net.sf.json-lib</groupId>    -->
-			    <!--<artifactId>json-lib</artifactId>    -->
-			    <!--<version>${json-lib.version}</version>-->
-				<!--<classifier>jdk15</classifier>-->
-			<!--</dependency>-->
-			<!-- JSON end -->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <!--<scope>test</scope>-->
+            </dependency>
 
-			<!-- tools -->
-			<dependency>
-				<groupId>com.google.guava</groupId>
-				<artifactId>guava</artifactId>
-				<version>${guava.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>com.google.code.gson</groupId>
-				<artifactId>gson</artifactId>
-				<version>${gson.version}</version>
-			</dependency>
+            <!-- JSON begin -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.module</groupId>
+                <artifactId>jackson-module-jaxb-annotations</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
 
-			<dependency>
-				<groupId>commons-fileupload</groupId>
-				<artifactId>commons-fileupload</artifactId>
-				<version>${commons-fileupload.version}</version>
-			</dependency>
-			
-			<!-- mail -->
-			<dependency>
-				<groupId>javax.mail</groupId>
-				<artifactId>javax.mail-api</artifactId>
-				<version>${javax.mail-api.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>com.sun.mail</groupId>
-				<artifactId>javax.mail</artifactId>
-				<version>${javax.mail-api.version}</version>
-			</dependency>
-			<!--<dependency>
-				<groupId>javax.mail</groupId>
-				<artifactId>mail</artifactId>
-				<version>${mail.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>javax.mail</groupId>
-				<artifactId>mailapi</artifactId>
-				<version>${mailapi.version}</version>
-			</dependency>-->
-			
-			<dependency>
-				<groupId>dom4j</groupId>
-				<artifactId>dom4j</artifactId>
-				<version>${dom4j.version}</version>
-			</dependency>
-			
-			<dependency>
-				<groupId>org.apache.hadoop</groupId>
-				<artifactId>hadoop-mapreduce-client-common</artifactId>
-				<version>${hadoop-mapreduce-client-common.version}</version>
-			</dependency>
-			
-			<dependency>
-				<groupId>org.apache.hadoop</groupId>
-				<artifactId>hadoop-mapreduce-client-core</artifactId>
-				<version>${hadoop-mapreduce-client-core.version}</version>
-			</dependency>
-			
-			<dependency>
-				<groupId>org.apache.hadoop</groupId>
-				<artifactId>hadoop-mapreduce-client-jobclient</artifactId>
-				<version>${hadoop-mapreduce-client-jobclient.version}</version>
-			</dependency>
-			
-			<dependency>
-				<groupId>org.apache.hadoop</groupId>
-				<artifactId>hadoop-auth</artifactId>
-				<version>${hadoop-auth.version}</version>
-			</dependency>
-			
-			<dependency>
-				<groupId>org.apache.hadoop</groupId>
-				<artifactId>hadoop-common</artifactId>
-				<version>${hadoop-common.version}</version>
-			</dependency>
-			
-			<dependency>
-				<groupId>org.apache.hadoop</groupId>
-				<artifactId>hadoop-hdfs</artifactId>
-				<version>${hadoop-hdfs.version}</version>
-			</dependency>
-			
-			<dependency>
-				<groupId>org.apache.hadoop</groupId>
-				<artifactId>hadoop-yarn-api</artifactId>
-				<version>${hadoop-yarn-api.version}</version>
-			</dependency>
-			
-			<dependency>
-				<groupId>org.apache.hadoop</groupId>
-				<artifactId>hadoop-yarn-client</artifactId>
-				<version>${hadoop-yarn-client.version}</version>
-			</dependency>
-			
-			<dependency>
-				<groupId>org.apache.hadoop</groupId>
-				<artifactId>hadoop-yarn-common</artifactId>
-				<version>${hadoop-yarn-common.version}</version>
-			</dependency>
-			
-			<dependency>
-				<groupId>commons-cli</groupId>
-				<artifactId>commons-cli</artifactId>
-				<version>${commons-cli.version}</version>
-			</dependency>
-			
-			<dependency>
-				<groupId>commons-collections</groupId>
-				<artifactId>commons-collections</artifactId>
-				<version>${commons-collections.version}</version>
-			</dependency>
-			
-			<dependency>
-				<groupId>commons-configuration</groupId>
-				<artifactId>commons-configuration</artifactId>
-				<version>${commons-configuration.version}</version>
-			</dependency>
-			
-			<dependency>
-				<groupId>commons-lang</groupId>
-				<artifactId>commons-lang</artifactId>
-				<version>${commons-lang.version}</version>
-			</dependency>
-			
-			<dependency>
-				<groupId>org.htrace</groupId>
-				<artifactId>htrace-core</artifactId>
-				<version>${htrace-core.version}</version>
-			</dependency>
+            <!-- tools -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.code.gson</groupId>
+                <artifactId>gson</artifactId>
+                <version>${gson.version}</version>
+            </dependency>
 
-			<dependency>
-				<groupId>com.fasterxml.jackson.core</groupId>
-				<artifactId>jackson-core</artifactId>
-				<version>${jackson-core.version}</version>
-			</dependency>
+            <dependency>
+                <groupId>commons-fileupload</groupId>
+                <artifactId>commons-fileupload</artifactId>
+                <version>${commons-fileupload.version}</version>
+            </dependency>
 
-			<dependency>
-				<groupId>com.fasterxml.jackson.core</groupId>
-				<artifactId>jackson-annotations</artifactId>
-				<version>${jackson-annotations.version}</version>
-			</dependency>
-			<!--<dependency>
-				<groupId>org.codehaus.jackson</groupId>
-				<artifactId>jackson-jaxrs</artifactId>
-				<version>${jackson-jaxrs.version}</version>
-			</dependency>-->
+            <!-- mail -->
+            <dependency>
+                <groupId>javax.mail</groupId>
+                <artifactId>javax.mail-api</artifactId>
+                <version>${javax.mail-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sun.mail</groupId>
+                <artifactId>javax.mail</artifactId>
+                <version>${javax.mail-api.version}</version>
+            </dependency>
 
-			<dependency>
-				<groupId>org.codehaus.jackson</groupId>
-				<artifactId>jackson-core-asl</artifactId>
-				<version>${jackson-core-asl.version}</version>
-			</dependency>
+            <dependency>
+                <groupId>dom4j</groupId>
+                <artifactId>dom4j</artifactId>
+                <version>${dom4j.version}</version>
+            </dependency>
 
-			<dependency>
-				<groupId>org.codehaus.jackson</groupId>
-				<artifactId>jackson-mapper-asl</artifactId>
-				<version>${jackson-mapper-asl.version}</version>
-			</dependency>
+            <dependency>
+                <groupId>org.apache.hadoop</groupId>
+                <artifactId>hadoop-mapreduce-client-common</artifactId>
+                <version>${hadoop-mapreduce-client-common.version}</version>
+            </dependency>
 
-			<!--<dependency>
-				<groupId>org.codehaus.jackson</groupId>
-				<artifactId>jackson-xc</artifactId>
-				<version>${jackson-xc.version}</version>
-			</dependency>-->
+            <dependency>
+                <groupId>org.apache.hadoop</groupId>
+                <artifactId>hadoop-mapreduce-client-core</artifactId>
+                <version>${hadoop-mapreduce-client-core.version}</version>
+            </dependency>
 
-			<dependency>
-				<groupId>com.fasterxml.jackson.datatype</groupId>
-				<artifactId>jackson-datatype-hibernate4</artifactId>
-				<version>2.2.3</version>
-			</dependency>
+            <dependency>
+                <groupId>org.apache.hadoop</groupId>
+                <artifactId>hadoop-mapreduce-client-jobclient</artifactId>
+                <version>${hadoop-mapreduce-client-jobclient.version}</version>
+            </dependency>
 
-			<dependency>
-				<groupId>com.sun.jersey</groupId>
-				<artifactId>jersey-client</artifactId>
-				<version>${jersey-client.version}</version>
-			</dependency>
-			
-			<dependency>
-				<groupId>com.sun.jersey</groupId>
-				<artifactId>jersey-core</artifactId>
-				<version>${jersey-core.version}</version>
-			</dependency>
-			
-			<dependency>
-				<groupId>com.google.protobuf</groupId>
-				<artifactId>protobuf-java</artifactId>
-				<version>${protobuf-java.version}</version>
-			</dependency>
+            <dependency>
+                <groupId>org.apache.hadoop</groupId>
+                <artifactId>hadoop-auth</artifactId>
+                <version>${hadoop-auth.version}</version>
+            </dependency>
 
-			<dependency>
-				<groupId>com.hortonworks</groupId>
-				<artifactId>shc</artifactId>
-				<version>${shc.version}</version>
-			</dependency>
-			
-			<dependency>
-				<groupId>org.apache.oozie</groupId>
-				<artifactId>oozie-core</artifactId>
-				<version>${oozie-core.version}</version>
-				<exclusions>
-					<exclusion>
-						<groupId>org.apache.hadoop</groupId>
-						<artifactId>hadoop-core</artifactId>
-					</exclusion>
-					<exclusion>
-						<artifactId>openjpa-persistence</artifactId>
-						<groupId>org.apache.openjpa</groupId>
-					</exclusion>
-				</exclusions>
-			</dependency>
-			
-			<!--<dependency>
-			    <groupId>jdk.tools</groupId>
-			    <artifactId>jdk.tools</artifactId>
-			    <version>1.8</version>
-			    <scope>system</scope>
-			    <systemPath>${JAVA_HOME}/lib/tools.jar</systemPath>
-			</dependency>-->
-			
-			<dependency>
-				<groupId>mysql</groupId>
-				<artifactId>mysql-connector-java</artifactId>
-				<version>${mysql-connector-java.version}</version>
-			</dependency>
+            <dependency>
+                <groupId>org.apache.hadoop</groupId>
+                <artifactId>hadoop-common</artifactId>
+                <version>${hadoop-common.version}</version>
+            </dependency>
 
-				<!-- 添加oracle jdbc driver -->
-			<dependency>
-				<groupId>ojdbc</groupId>
-				<artifactId>ojdbc</artifactId>
-				<version>${oracle-connector-java.version}</version>
-			</dependency>
+            <dependency>
+                <groupId>org.apache.hadoop</groupId>
+                <artifactId>hadoop-hdfs</artifactId>
+                <version>${hadoop-hdfs.version}</version>
+            </dependency>
 
-			<!-- sqlserver -->
-			<!--jTDS is an open source 100% pure Java (type 4) JDBC 3.0 driver for Microsoft SQL Server (6.5, 7, 2000, 2005, 2008, 2012) and Sybase ASE (10, 11, 12, 15). jTDS is based on FreeTDS and is currently the fastest production-ready JDBC driver for SQL Server and Sybase. jTDS is 100% JDBC 3.0 compatible, supporting forward-only and scrollable/updateable ResultSets and implementing all the DatabaseMetaData and ResultSetMetaData methods. -->
-			<dependency>
-				<groupId>net.sourceforge.jtds</groupId>
-				<artifactId>jtds</artifactId>
-				<version>1.3.1</version>
-			</dependency>
+            <dependency>
+                <groupId>org.apache.hadoop</groupId>
+                <artifactId>hadoop-yarn-api</artifactId>
+                <version>${hadoop-yarn-api.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.hadoop</groupId>
+                <artifactId>hadoop-yarn-client</artifactId>
+                <version>${hadoop-yarn-client.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.hadoop</groupId>
+                <artifactId>hadoop-yarn-common</artifactId>
+                <version>${hadoop-yarn-common.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-cli</groupId>
+                <artifactId>commons-cli</artifactId>
+                <version>${commons-cli.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-collections</groupId>
+                <artifactId>commons-collections</artifactId>
+                <version>${commons-collections.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-configuration</groupId>
+                <artifactId>commons-configuration</artifactId>
+                <version>${commons-configuration.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-lang</groupId>
+                <artifactId>commons-lang</artifactId>
+                <version>${commons-lang.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.htrace</groupId>
+                <artifactId>htrace-core</artifactId>
+                <version>${htrace-core.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${jackson-core.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
+                <version>${jackson-annotations.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.codehaus.jackson</groupId>
+                <artifactId>jackson-core-asl</artifactId>
+                <version>${jackson-core-asl.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.codehaus.jackson</groupId>
+                <artifactId>jackson-mapper-asl</artifactId>
+                <version>${jackson-mapper-asl.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.datatype</groupId>
+                <artifactId>jackson-datatype-hibernate4</artifactId>
+                <version>2.2.3</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sun.jersey</groupId>
+                <artifactId>jersey-client</artifactId>
+                <version>${jersey-client.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sun.jersey</groupId>
+                <artifactId>jersey-core</artifactId>
+                <version>${jersey-core.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.protobuf</groupId>
+                <artifactId>protobuf-java</artifactId>
+                <version>${protobuf-java.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.hortonworks</groupId>
+                <artifactId>shc</artifactId>
+                <version>${shc.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.oozie</groupId>
+                <artifactId>oozie-core</artifactId>
+                <version>${oozie-core.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.apache.hadoop</groupId>
+                        <artifactId>hadoop-core</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>openjpa-persistence</artifactId>
+                        <groupId>org.apache.openjpa</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connector-java.version}</version>
+            </dependency>
+
+            <!-- 添加oracle jdbc driver -->
+            <dependency>
+                <groupId>ojdbc</groupId>
+                <artifactId>ojdbc</artifactId>
+                <version>${oracle-connector-java.version}</version>
+            </dependency>
+
+            <!-- sqlserver -->
+            <!--jTDS is an open source 100% pure Java (type 4) JDBC 3.0 driver for Microsoft SQL Server (6.5, 7, 2000, 2005, 2008, 2012) and Sybase ASE (10, 11, 12, 15). jTDS is based on FreeTDS and is currently the fastest production-ready JDBC driver for SQL Server and Sybase. jTDS is 100% JDBC 3.0 compatible, supporting forward-only and scrollable/updateable ResultSets and implementing all the DatabaseMetaData and ResultSetMetaData methods. -->
+            <dependency>
+                <groupId>net.sourceforge.jtds</groupId>
+                <artifactId>jtds</artifactId>
+                <version>1.3.1</version>
+            </dependency>
 
 
-			<!-- spark -->
-			<dependency>
-				  <groupId>org.apache.spark</groupId>
-				  <artifactId>spark-core_2.10</artifactId>
-				  <version>${spark.version}</version>
-			</dependency>
-			<dependency>
-				  <groupId>org.apache.spark</groupId>
-				  <artifactId>spark-sql_2.10</artifactId>
-				  <version>${spark.version}</version>
-			</dependency>
-			<dependency>
-		      	  <groupId>org.apache.spark</groupId>
-		      	  <artifactId>spark-mllib_2.10</artifactId>
-		      	  <version>${spark.version}</version>
-		    </dependency>
-		    <dependency>
-		      	  <groupId>org.apache.spark</groupId>
-		      	  <artifactId>spark-yarn_2.10</artifactId>
-		      	  <version>${spark.version}</version>
-		    </dependency>
-		    
-		    <!-- scala -->
-		    <dependency>
-		      	  <groupId>org.scala-lang</groupId>
-		      	  <artifactId>scala-library</artifactId>
-		      	  <version>${scala.version}</version>
-		    </dependency>
+            <!-- spark -->
+            <dependency>
+                <groupId>org.apache.spark</groupId>
+                <artifactId>spark-core_2.10</artifactId>
+                <version>${spark.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.spark</groupId>
+                <artifactId>spark-sql_2.10</artifactId>
+                <version>${spark.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.spark</groupId>
+                <artifactId>spark-mllib_2.10</artifactId>
+                <version>${spark.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.spark</groupId>
+                <artifactId>spark-yarn_2.10</artifactId>
+                <version>${spark.version}</version>
+            </dependency>
 
-			<dependency>
-				<groupId>org.apache.sqoop</groupId>
-				<artifactId>sqoop-client</artifactId>
-				<version>${sqoop-client.version}</version>
-			</dependency>
+            <!-- scala -->
+            <dependency>
+                <groupId>org.scala-lang</groupId>
+                <artifactId>scala-library</artifactId>
+                <version>${scala.version}</version>
+            </dependency>
 
-			<dependency>
-				<groupId>org.apache.sqoop</groupId>
-				<artifactId>sqoop</artifactId>
-				<version>${sqoop.version}</version>
-			</dependency>
+            <dependency>
+                <groupId>org.apache.sqoop</groupId>
+                <artifactId>sqoop-client</artifactId>
+                <version>${sqoop-client.version}</version>
+            </dependency>
 
-			<dependency>
-				<groupId>org.apache.hbase</groupId>
-				<artifactId>hbase-client</artifactId>
-				<version>${hbase.version}</version>
-			</dependency>
+            <dependency>
+                <groupId>org.apache.sqoop</groupId>
+                <artifactId>sqoop</artifactId>
+                <version>${sqoop.version}</version>
+            </dependency>
 
-			<dependency>
-				<groupId>org.apache.spark</groupId>
-				<artifactId>spark-hive_2.10</artifactId>
-				<version>${spark.version}</version>
-			</dependency>
+            <dependency>
+                <groupId>org.apache.hbase</groupId>
+                <artifactId>hbase-client</artifactId>
+                <version>${hbase.version}</version>
+            </dependency>
 
-			<dependency>
-				<groupId>org.apache.spark</groupId>
-				<artifactId>spark-streaming-kafka_2.10</artifactId>
-				<version>${spark.version}</version>
-			</dependency>
+            <dependency>
+                <groupId>org.apache.spark</groupId>
+                <artifactId>spark-hive_2.10</artifactId>
+                <version>${spark.version}</version>
+            </dependency>
 
-			<dependency>
-				<groupId>org.apache.spark</groupId>
-				<artifactId>spark-streaming_2.10</artifactId>
-				<version>${spark.version}</version>
-			</dependency>
+            <dependency>
+                <groupId>org.apache.spark</groupId>
+                <artifactId>spark-streaming-kafka_2.10</artifactId>
+                <version>${spark.version}</version>
+            </dependency>
 
-			<dependency>
-				<groupId>org.apache.hive</groupId>
-				<artifactId>hive-jdbc</artifactId>
-				<version>${hive-jdbc.version}</version>
-			</dependency>
+            <dependency>
+                <groupId>org.apache.spark</groupId>
+                <artifactId>spark-streaming_2.10</artifactId>
+                <version>${spark.version}</version>
+            </dependency>
 
-			<!-- Apache commons -->
-			<dependency>
-				<groupId>org.apache.httpcomponents</groupId>
-				<artifactId>httpclient</artifactId>
-				<version>${httpclient.version}</version>
-			</dependency>
+            <dependency>
+                <groupId>org.apache.hive</groupId>
+                <artifactId>hive-jdbc</artifactId>
+                <version>${hive-jdbc.version}</version>
+            </dependency>
 
-			<dependency>
-				<groupId>com.alibaba</groupId>
-				<artifactId>fastjson</artifactId>
-				<version>${fastjson.version}</version>
-			</dependency>
+            <!-- Apache commons -->
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${httpclient.version}</version>
+            </dependency>
 
-			<dependency>
-				<groupId>net.sourceforge.jchardet</groupId>
-				<artifactId>jchardet</artifactId>
-				<version>${jchardet.version}</version>
-			</dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
 
-			<dependency>
-				<groupId>com.zxsimple.dmls</groupId>
-				<artifactId>sshxcute</artifactId>
-				<version>${sshxcute.version}</version>
-			</dependency>
+            <dependency>
+                <groupId>net.sourceforge.jchardet</groupId>
+                <artifactId>jchardet</artifactId>
+                <version>${jchardet.version}</version>
+            </dependency>
 
-			<dependency>
-				<groupId>sramirez</groupId>
-				<artifactId>spark-MDLP-discretization</artifactId>
-				<version>${dmlp.version}</version>
-			</dependency>
+            <dependency>
+                <groupId>com.zxsimple.dmls</groupId>
+                <artifactId>sshxcute</artifactId>
+                <version>${sshxcute.version}</version>
+            </dependency>
 
-			<dependency>
-				<groupId>com.zxsimple.dmls.hive</groupId>
-				<artifactId>jdbc</artifactId>
-				<version>${hivejdbc.version}</version>
-			</dependency>
+            <dependency>
+                <groupId>sramirez</groupId>
+                <artifactId>spark-MDLP-discretization</artifactId>
+                <version>${dmlp.version}</version>
+            </dependency>
 
-			<dependency>
-				<groupId>org.apache.tez</groupId>
-				<artifactId>tez-api</artifactId>
-				<version>${tez.version}</version>
-			</dependency>
+            <dependency>
+                <groupId>com.zxsimple.dmls.hive</groupId>
+                <artifactId>jdbc</artifactId>
+                <version>${hivejdbc.version}</version>
+            </dependency>
 
-			<dependency>
-				<groupId>com.cloudera.sparkts</groupId>
-				<artifactId>sparkts</artifactId>
-				<version>${sparkts.version}</version>
-			</dependency>
+            <dependency>
+                <groupId>org.apache.tez</groupId>
+                <artifactId>tez-api</artifactId>
+                <version>${tez.version}</version>
+            </dependency>
 
-			<dependency>
-				<groupId>ch.ethz.ganymed</groupId>
-				<artifactId>ganymed-ssh2</artifactId>
-				<version>${ganymed-ssh2.version}</version>
-			</dependency>
+            <dependency>
+                <groupId>com.cloudera.sparkts</groupId>
+                <artifactId>sparkts</artifactId>
+                <version>${sparkts.version}</version>
+            </dependency>
 
-			<dependency>
-				<groupId>org.jgrapht</groupId>
-				<artifactId>jgrapht-core</artifactId>
-				<version>${jgrapht.version}</version>
-			</dependency>
-		</dependencies>
+            <dependency>
+                <groupId>ch.ethz.ganymed</groupId>
+                <artifactId>ganymed-ssh2</artifactId>
+                <version>${ganymed-ssh2.version}</version>
+            </dependency>
 
-	</dependencyManagement>
+            <dependency>
+                <groupId>org.jgrapht</groupId>
+                <artifactId>jgrapht-core</artifactId>
+                <version>${jgrapht.version}</version>
+            </dependency>
+        </dependencies>
 
-	<build>
-		<plugins>
+    </dependencyManagement>
 
-			<!-- compiler -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.3</version>
-				<configuration>
-					<source>${java.version}</source>
-					<target>${java.version}</target>
-					<showWarnings>true</showWarnings>
-				</configuration>
-			</plugin>
+    <build>
+        <plugins>
 
-			<!-- war -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>2.5</version>
-				<configuration>
-					<warName>${project.artifactId}</warName>
-				</configuration>
-			</plugin>
+            <!-- compiler -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.3</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <showWarnings>true</showWarnings>
+                </configuration>
+            </plugin>
 
-		</plugins>
+            <!-- war -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.5</version>
+                <configuration>
+                    <warName>${project.artifactId}</warName>
+                </configuration>
+            </plugin>
 
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<!-- see http://davidb.github.com/scala-maven-plugin -->
-					<groupId>org.scala-tools</groupId>
-					<artifactId>maven-scala-plugin</artifactId>
-					<version>2.15.2</version>
-					<executions>
-						<execution>
-							<goals>
-								<goal>compile</goal>
-								<goal>testCompile</goal>
-							</goals>
-							<configuration>
-								<args>
-									<arg>-make:transitive</arg>
-									<arg>-dependencyfile</arg>
-									<arg>-deprecation</arg>
-									<!-- arg>${project.build.directory}\.scala_dependencies</arg-->
-								</args>
-							</configuration>
-						</execution>
-						<execution>
-							<id>scala-compile-first</id>
-							<phase>process-resources</phase>
-							<goals>
-								<goal>add-source</goal>
-								<goal>compile</goal>
-							</goals>
-						</execution>
-						<execution>
-							<id>scala-test-compile</id>
-							<phase>process-test-resources</phase>
-							<goals>
-								<goal>testCompile</goal>
-							</goals>
-						</execution>
-					</executions>
-				</plugin>
+        </plugins>
 
-				<plugin>
-					<!-- see http://davidb.github.com/scala-maven-plugin -->
-					<groupId>net.alchim31.maven</groupId>
-					<artifactId>scala-maven-plugin</artifactId>
-					<version>3.2.2</version>
-					<executions>
-						<execution>
-							<goals>
-								<goal>compile</goal>
-								<goal>testCompile</goal>
-							</goals>
-							<!--<configuration>
-								<args>
-									<arg>-make:transitive</arg>
-									<arg>-dependencyfile</arg>
-									<arg>-deprecation</arg>
-									&lt;!&ndash; arg>${project.build.directory}\.scala_dependencies</arg&ndash;&gt;
-								</args>
-							</configuration>-->
-						</execution>
-						<execution>
-							<id>scala-compile-first</id>
-							<phase>process-resources</phase>
-							<goals>
-								<goal>add-source</goal>
-								<goal>compile</goal>
-							</goals>
-						</execution>
-						<execution>
-							<id>scala-test-compile</id>
-							<phase>process-test-resources</phase>
-							<goals>
-								<goal>testCompile</goal>
-							</goals>
-						</execution>
-					</executions>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-surefire-plugin</artifactId>
-					<version>2.18.1</version>
-					<!--<configuration>-->
-						<!--<useFile>false</useFile>-->
-						<!--<disableXmlReport>true</disableXmlReport>-->
-						<!--&lt;!&ndash; If you have classpath issue like NoDefClassError,... &ndash;&gt;-->
-						<!--&lt;!&ndash; useManifestOnlyJar>false</useManifestOnlyJar &ndash;&gt;-->
-						<!--<includes>-->
-							<!--<include>**/*Test.*</include>-->
-							<!--<include>**/*Suite.*</include>-->
-						<!--</includes>-->
-					<!--</configuration>-->
-				</plugin>
-				<plugin>
-					<artifactId>maven-assembly-plugin</artifactId>
-					<version>2.4</version>
-					<configuration>
-						<descriptorRefs>
-							<descriptorRef>jar-with-dependencies</descriptorRef>
-						</descriptorRefs>
-						<archive>
-							<manifest>
-								<mainClass></mainClass>
-							</manifest>
-						</archive>
-					</configuration>
-					<executions>
-						<execution>
-							<id>make-assembly</id>
-							<phase>package</phase>
-							<goals>
-								<goal>single</goal>
-							</goals>
-						</execution>
-					</executions>
-				</plugin>
-			</plugins>
-		</pluginManagement>
-	</build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <!-- see http://davidb.github.com/scala-maven-plugin -->
+                    <groupId>org.scala-tools</groupId>
+                    <artifactId>maven-scala-plugin</artifactId>
+                    <version>2.15.2</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>compile</goal>
+                                <goal>testCompile</goal>
+                            </goals>
+                            <configuration>
+                                <args>
+                                    <arg>-make:transitive</arg>
+                                    <arg>-dependencyfile</arg>
+                                    <arg>-deprecation</arg>
+                                </args>
+                            </configuration>
+                        </execution>
+                        <execution>
+                            <id>scala-compile-first</id>
+                            <phase>process-resources</phase>
+                            <goals>
+                                <goal>add-source</goal>
+                                <goal>compile</goal>
+                            </goals>
+                        </execution>
+                        <execution>
+                            <id>scala-test-compile</id>
+                            <phase>process-test-resources</phase>
+                            <goals>
+                                <goal>testCompile</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
 
-	<profiles>
-		<profile>
-			<id>jdk17</id>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-				<jdk>1.7</jdk>
-			</activation>
-			<properties>
-				<maven.compiler.source>1.7</maven.compiler.source>
-				<maven.compiler.target>1.7</maven.compiler.target>
-				<maven.compiler.compilerVersion>1.7</maven.compiler.compilerVersion>
-			</properties>
-		</profile>
+                <plugin>
+                    <!-- see http://davidb.github.com/scala-maven-plugin -->
+                    <groupId>net.alchim31.maven</groupId>
+                    <artifactId>scala-maven-plugin</artifactId>
+                    <version>3.2.2</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>compile</goal>
+                                <goal>testCompile</goal>
+                            </goals>
+                        </execution>
+                        <execution>
+                            <id>scala-compile-first</id>
+                            <phase>process-resources</phase>
+                            <goals>
+                                <goal>add-source</goal>
+                                <goal>compile</goal>
+                            </goals>
+                        </execution>
+                        <execution>
+                            <id>scala-test-compile</id>
+                            <phase>process-test-resources</phase>
+                            <goals>
+                                <goal>testCompile</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.18.1</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-assembly-plugin</artifactId>
+                    <version>2.4</version>
+                    <configuration>
+                        <descriptorRefs>
+                            <descriptorRef>jar-with-dependencies</descriptorRef>
+                        </descriptorRefs>
+                        <archive>
+                            <manifest>
+                                <mainClass></mainClass>
+                            </manifest>
+                        </archive>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>make-assembly</id>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>single</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 
-	</profiles>
+    <profiles>
+        <profile>
+            <id>jdk17</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+                <jdk>1.7</jdk>
+            </activation>
+            <properties>
+                <maven.compiler.source>1.7</maven.compiler.source>
+                <maven.compiler.target>1.7</maven.compiler.target>
+                <maven.compiler.compilerVersion>1.7</maven.compiler.compilerVersion>
+            </properties>
+        </profile>
+
+    </profiles>
 </project>

@@ -5,6 +5,7 @@ import java.util.Properties
 
 import com.alibaba.fastjson.JSONObject
 import com.zxsimple.dmls.common.metadata.model.NodeVertex
+import com.zxsimple.dmls.operator.OperatorTemplate
 import org.apache.spark.sql.DataFrame
 import org.apache.spark.sql.hive.HiveContext
 
