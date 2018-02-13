@@ -1,12 +1,12 @@
 # Distributed Machine Learning Studio
 
-Distributed Machine Learning Studio is
+Distributed Machine Learning Studio is Drag-and-Drop style ML Plaform that based on [Apache Spark](http://spark.apache.org) computation engine. DMLS supply similar experience as Microsoft [Azure Machine Learning Studio](https://studio.azureml.net/) and Aliyun [PAI](https://data.aliyun.com/product/learn), it benifits non-cloud user doing ML task on Big Data.
 
 ## Instructions of setting up
 
 ### Initialize metadata store
 
-## Get IP address of host
+### Get IP address of host
 IP_ADDR=$(ifconfig en0 | grep "inet" | awk '{ print $2}' | awk 'NR==2{print}')
 sudo hostname quickstart.cloudera
 
@@ -20,7 +20,6 @@ docker run -itd --name=tomcat --net=host -p 8080:8080 tomcat
 docker cp dmls-rest.war $(docker ps -a | grep tomcat | awk '{print $1}'):/usr/local/tomcat/webapps
 docker exec -it $(docker ps -a | grep tomcat | awk '{print $1}') bash
 
-
 ### Deploy web UI project
 docker cp dmls-ui $(docker ps -a | grep tomcat | awk '{print $1}'):/usr/local/tomcat/webapps
 
@@ -33,5 +32,5 @@ docker exec -it $(docker ps -a | grep fluxcapacitor/metastore-1.2.1 | awk '{prin
 ### Add hostname quickstart.cloudera
 docker run --hostname=quickstart.cloudera --privileged=true -t -i -p 127.0.0.1:7180:7180 -p 8020:8020 registry.cn-hangzhou.aliyuncs.com/mysky528/cdh_quickstart /usr/bin/docker-quickstart
 
-## Cloudera Manager is not started by default, start it
+### Cloudera Manager is not started by default, start it
 sh /home/cloudera/cloudera-manager --express
